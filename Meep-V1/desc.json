@@ -1,0 +1,62 @@
+{
+    "":{
+        "Cost":1,
+        "Interfaces":[],
+        "Function":"",
+        "Output":{}
+    },
+
+    "dire qu'il n'y a pas de fonction":{
+        "Cost":1,
+        "Interfaces":["Console"],
+        "Function":"dire_pas_de_fonction",
+        "Output":{}
+    },
+
+    "choisir quoi repondre sur discord":{
+        "Cost":1,
+        "Interfaces":["Spacy Word2Vec"],
+        "Function":"envoyer_sur_discord",
+        "Output":{
+        }
+    },
+    "dire qu'il n'y a pas de messages":{
+        "Cost":1,
+        "Interfaces":["Discord"],
+        "Function":"",
+        "Output":{}
+    },
+    "repondre sur discord":{
+        "Cost":1,
+        "Interfaces":["Discord"],
+        "Function":"",
+        "Output":{
+        }
+    },
+    "word2vec ne trouve pas de resultat":{
+        "Cost":1,
+        "Interfaces":["Discord"],
+        "Function":"dire_word2vec_pas_resultat",
+        "Output":{
+        }
+    },
+    "dire bonjour":{
+        "Cost":1,
+        "Interfaces":["Discord"],
+        "Function":"",
+        "Output":{}
+    },
+    "dire au revoir":{
+        "Cost":1,
+        "Interfaces":["Discord"],
+        "Function":"",
+        "Output":{}
+    },
+    "envoyer l'arbre":{
+        "Cost":1,
+        "Interfaces":["Discord"],
+        "Function":"",
+        "Output":{
+        }
+    }
+}

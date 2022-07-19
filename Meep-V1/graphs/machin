@@ -1,0 +1,35 @@
+digraph {
+	REPEAT [label=REPEAT color=red fontcolor=red fontstyle=bold]
+	"dire qu'il n'y a pas de fonction" [label="dire qu'il n'y a pas de fonction
+[Console]" color=magenta style=solid]
+	"choisir quoi repondre sur discord" [label="choisir quoi repondre sur discord
+[Spacy Word2Vec]" color=magenta style=solid]
+	"choisir quoi repondre sur discord" -> "Spacy Word2Vec" [color=orange style=solid]
+	"dire qu'il n'y a pas de messages" [label="dire qu'il n'y a pas de messages
+[Discord]" color=magenta style=solid]
+	"dire qu'il n'y a pas de messages" -> Discord [color=orange style=solid]
+	"repondre sur discord" [label="repondre sur discord
+[Discord]" color=magenta style=solid]
+	"repondre sur discord" -> Discord [color=orange style=solid]
+	"word2vec ne trouve pas de resultat" [label="word2vec ne trouve pas de resultat
+[Discord]" color=magenta style=solid]
+	"word2vec ne trouve pas de resultat" -> Discord [color=orange style=solid]
+	"dire bonjour" [label="dire bonjour
+[Discord]" color=magenta style=solid]
+	"dire bonjour" -> Discord [color=orange style=solid]
+	"dire au revoir" [label="dire au revoir
+[Discord]" color=magenta style=solid]
+	"dire au revoir" -> Discord [color=orange style=solid]
+	"envoyer l'arbre" [label="envoyer l'arbre
+[Discord]" color=magenta style=solid]
+	"envoyer l'arbre" -> Discord [color=orange style=solid]
+	"Discordmessage recu" [label="Discord : message recu" color=orange fontcolor=orange fontstyle=bold style=solid]
+	"Discordmessage recu" -> "choisir quoi repondre sur discord" [color=orange style=solid]
+	"Discorddemarrage complet" [label="Discord : demarrage complet" color=orange fontcolor=orange fontstyle=bold style=solid]
+	"Discorddemarrage complet" -> "dire bonjour" [color=orange style=solid]
+	"Spacy Word2Vec" [label="Spacy Word2Vec" color=orange fontcolor=orange fontstyle=bold style=solid]
+	"Spacy Word2Vec" -> "word2vec ne trouve pas de resultat" [color=gray style=dashed]
+	"Spacy Word2Vec" -> "dire bonjour" [color=gray style=dashed]
+	"Spacy Word2Vec" -> "dire au revoir" [color=gray style=dashed]
+	"Spacy Word2Vec" -> "envoyer l'arbre" [color=gray style=dashed]
+}

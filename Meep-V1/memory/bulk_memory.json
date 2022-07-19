@@ -1,0 +1,21 @@
+{
+    "keywords":{
+        "mots pour bonjour":[
+            "bonjour", "hey"
+        ],
+        "mots pour au revoir":[
+            "au revoir", "bye"
+        ],
+        "people":[
+            "raphael"
+        ]
+    },
+    "associate":{
+        "name aliases":{
+            "raphael":""
+        }
+    },
+    "texts":{
+        
+    }
+}

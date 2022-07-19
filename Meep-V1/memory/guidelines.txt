@@ -1,0 +1,29 @@
+L'extraction du contexte d'exécution d'une log se fait au travers d'une bulle qui examine l'ensemble de la mémoire. (inefficace, mais simple et très souple) :: (permet d'éviter de répéter des informations et à la fois d'obtenir un fichier lisible. Si un jour on utilise une base de données on pourra lier directement les informations utiles entre elles.)
+C'est à dire qu'à partir d'un log : "message envoyé à heure", si on veut retrouver qui a demandé l'envoi du message il faudra lire le le log "utilisateur qui me parle, date" dont la date correspond le plus à la date du log "message envoyé à heure (date)".
+Si on veut retrouver dans quel salon discord le message a été envoyé il faudra lire le log "salon dans lequel j'écris à date" et chercher celui dont la date correspond, etc...
+
+"states" contient des ensembles (id_fixe : date, valeur).
+Les valeurs de states sont modifiées par des bulles dédiées, pour intervenir dans des les bulles qui s'exécutent plus tard comme booléens et switch dans des tests.
+=> à cause de ça les states prennent des valeurs (normalement, en général) discrètes.
+
+"logs" contient des ensembles (date, tags (=ids_variables), valeur).
+Il s'agit du résultat d'une opération particulière, qui n'est pas destinée nécessairement à être exploitée par une autre bulle. (c'est là juste pour "garder un souvenir")
+Un log rend compte de l'exécution d'une opération, et pas nécessairement de son résultat. (Un changement de valeur discrète par une bulle n'est pas représentée par un "logs" mais par un "states", par exemple.)
+Certaines bulles ne laissent pas de logs, d'autres peuvent en laisser plusieurs.
+Quand on implémente une bulle : on laisse un log uniquement quand on sait que ça servira à une bulle existante ou à une bulle qu'on implémentera bientôt.
+(sinon on se retrouvera trop vite avec trop de logs)
+
+"storage": contient des ensembles (id_fixe : date, valeur).
+Ces valeurs seront utilisées comme sortie ou données de travail par d'autres bulles. (c'est à dire : pas dans des if ou des switch, mais dans des algorithmes)
+Ces données sont (en général, normalement) pas qualitatives. ça peut être un texte, par exemple.
+
+"working": contient des ensembles "id_fixe":["liste de valeurs"]. = CACHE
+Il n'y a pas de date, et cette mémoire représente du contenu de "storage" destiné à être facilement accessible pour des opérations.
+Cette mémoire sert de backup au cas où le programme crash. (éventuellement à retirer de la zone mémoire)
+
+La première valeur de chaque slot de stockage représente le gmtime de la dernière fois que ce slot a été édité.
+
+
+La memoire bulk contient des donnees structurees construites par d'autres bulles sans les codes explicitement.
+en fait c'est juste pour les trucs qui vont être édités moins vites et qui contiennent beaucoup plus de trucs. (lenteur de lecture)
+

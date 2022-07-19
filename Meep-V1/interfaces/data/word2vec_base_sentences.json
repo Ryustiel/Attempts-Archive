@@ -1,0 +1,19 @@
+{
+    "groups":{
+        "bonjour":[
+            "bonjour", "salut", "comment ça va", "hey"
+        ],
+        "au revoir":[
+            "bye", "à la revoyure", "au revoir"
+        ],
+        "envoie l'arbre":[
+            "envoie l'arbre"
+        ]
+    },
+    "responses":{
+        "uncertain":"word2vec ne trouve pas de resultat",
+        "bonjour":"dire bonjour",
+        "au revoir":"dire au revoir",
+        "envoie l'arbre":"envoyer l'arbre"
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "interfaces":[
+        {
+            "name":"Discord",
+            "path":"interfaces/discord_interface.py",
+            "classname":"DiscordInterface",
+            "events":{
+                "message recu":["choisir quoi repondre sur discord"],
+                "demarrage complet":["dire bonjour"]
+            }
+        },
+        {
+            "name":"Spacy Word2Vec",
+            "path":"interfaces/spacy_word2vec.py",
+            "classname":"Word2Vec",
+            "events":{
+                "":["#variables"]
+            }
+        }
+    ]
+}
