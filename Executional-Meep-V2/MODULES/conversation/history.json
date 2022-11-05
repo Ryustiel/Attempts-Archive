@@ -1,0 +1,9 @@
+{
+    "date":[
+        {
+            "person": "who said",
+            "delay": "time since last message (0 if first message)",
+            "message": "what got said"
+        }
+    ]
+}
